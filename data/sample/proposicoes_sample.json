@@ -1,0 +1,26 @@
+[
+  {
+    "id": 2450011,
+    "siglaTipo": "PL",
+    "numero": 1024,
+    "ano": 2026,
+    "ementa": "Altera a Lei de Diretrizes Orçamentárias para estabelecer metas de transparência fiscal em emendas parlamentares.",
+    "dataApresentacao": "2026-11-10T14:30:00"
+  },
+  {
+    "id": 2450012,
+    "siglaTipo": "PEC",
+    "numero": 45,
+    "ano": 2026,
+    "ementa": "Dispõe sobre regras de transição tributária e governança digital na administração pública federal.",
+    "dataApresentacao": "2026-11-12T10:15:00"
+  },
+  {
+    "id": 2450013,
+    "siglaTipo": "PL",
+    "numero": 1089,
+    "ano": 2026,
+    "ementa": "Institui o programa nacional de incentivo à eficiência energética em prédios públicos.",
+    "dataApresentacao": "2026-11-14T16:45:00"
+  }
+]

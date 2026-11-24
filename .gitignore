@@ -1,0 +1,23 @@
+# Ambientes virtuais
+.venv/
+venv/
+env/
+
+# Variáveis de ambiente e segredos
+.env
+.env.*
+!.env.example
+
+# Cache Python e IDEs
+__pycache__/
+*.py[cod]
+*$py.class
+.vscode/
+.idea/
+.DS_Store
+
+# Dados locais temporários e logs
+*.log
+*.csv
+*.sqlite3
+!data/sample/*
