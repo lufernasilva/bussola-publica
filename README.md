@@ -51,9 +51,13 @@ bussola-publica/
 │   └── sample/                  # Amostras leves (.json) para testes locais sem sobrecarregar APIs
 ├── docs/                        # Diagramas, evidências e documentação complementar
 ├── n8n/                         # Workflows exportados (.json) do n8n
+├── notebooks/                   # Notebooks exploratórios e de padronização (ETL)
+│   ├── 01_extracao_api_camara.ipynb
+│   └── 02_padronizacao.ipynb
 ├── sql/                         # Scripts DDL e migrations incrementais do Supabase
 │   └── 00_fase0_init.sql        # Schema base (Fase 0)
 ├── src/                         # Scripts Python de extração, carga DW e pipeline de IA
+│   └── etl_camara.py            # Extração e processamento inicial da API da Câmara
 ├── .env.example                 # Modelo de variáveis de ambiente
 ├── .gitignore                   # Bloqueio de segredos (.env), caches e ambientes virtuais
 ├── MANUAL_SQUAD.md              # Guia operacional, Git-flow e plano de 14 dias
@@ -120,7 +124,7 @@ python src/ia_classificacao.py
 # Etapa 4 — Orquestração e Alertas
 # Importe o workflow de n8n/ na sua instância n8n, configure as credenciais e ative o agendamento.
 ```
-*(Nota: Os nomes exatos dos scripts em `src/` seguem as entregas das Etapas 1 a 3 previstas no roadmap.)*
+*(Nota: Os notebooks em `notebooks/` documentam a extração e padronização iniciais; novos scripts em `src/` seguem as entregas das Etapas 2 e 3.)*
 
 ---
 
@@ -143,7 +147,7 @@ O desenvolvimento segue um roadmap de **14 dias** dividido em 4 frentes paraleli
 | Papel | Responsáveis | Escopo Principal |
 | :--- | :--- | :--- |
 | **Integrante 1 — Tech Lead / Governança** | Luiz Fernando | Setup Fase 0 (Supabase, OpenAI, GitHub), revisões de PRs, apoio transversal e consolidação final (`README.md` + validação read-only). |
-| **Integrantes 2 e 3 — Engenharia de Dados (ETL & DW)** | *A definir* | **Etapa 1:** Extração da API da Câmara, paginação e padronização.<br>**Etapa 2:** DDL incremental (`dim_tempo`, `fato_votacoes`, `fato_despesas`), carga `UPSERT` e usuário read-only. |
+| **Integrantes 2 e 3 — Engenharia de Dados (ETL & DW)** | **João Marcelo**<br>**Robson** | **Etapa 1:** Extração da API da Câmara, paginação e padronização *(entrega inicial de João Marcelo mergeada via PR)*; sequência com **Robson**.<br>**Etapa 2:** DDL incremental (`dim_tempo`, `fato_votacoes`, `fato_despesas`), carga `UPSERT` e usuário read-only. |
 | **Integrantes 4 e 5 — IA & FinOps** | *A definir* | **Etapa 3:** Embeddings (`text-embedding-3-small`), filtro de temas críticos, resumos executivos (`gpt-4o-mini`) e métricas de custo. |
 | **Integrante 6 — Automação & Alertas** | *A definir* | **Etapa 4:** Configuração do n8n, bot do Telegram, testes de idempotência e apoio na carga histórica final (**Etapa 5**). |
 
