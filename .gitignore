@@ -21,3 +21,7 @@ __pycache__/
 *.csv
 *.sqlite3
 !data/sample/*
+
+# Camadas de dados gerados localmente (Bronze/Silver)
+data/raw/
+data/silver/
